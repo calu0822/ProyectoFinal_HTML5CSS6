@@ -1,0 +1,502 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 16px;
+    color: #000;
+    background-color: #FFD7C1;
+    /*font-family: 'roboto';*/
+    font-family: 'Bree Serif';
+}
+
+/*  HEADER  */
+
+header{
+    width: 100%;
+    *position: fixed; /*para fijar el menu que siempre quede visible en la pagina con scroll */
+    top: 0;
+    left: 0;
+}
+
+.header-superior{
+    max-width: 1200px;
+    margin: auto; /*para que se centre*/
+    display: flex; /*para que los elementos se puedan organizar en la fila*/
+    align-items: center; /*para los elementos se centren en el div*/
+    justify-content: space-between;/*para que el logo se aline a la izq y el buscador a la derecha*/
+    padding: 0 20px;
+}
+
+#buscador {
+    width: 300px;
+    padding: 10px;
+}
+
+/*MENU*/
+
+.container-menu{
+    width: 100%;
+    height: 70px;
+    background: #072083;
+    padding: 0 20px; /*para mantener un espacio en la barra de izquierda y derecha*/
+}
+
+.menu{
+    max-width: 1200px;
+    margin: auto;
+    height: 100%; /*para alinear los objetos del menu en la barra*/   
+}
+
+nav{
+    height: 100%; /*contiene los objetos del menu para detectar el alto del contenedor */    
+}
+
+/*nav>ul{/*cambios para afectar al ul que esta dentro del nav*/
+ul{    
+    height: 100%;
+    display: flex; /*para colocar los li uno junto al otro*/
+}
+
+/*nav>ul>li{*/
+li{
+    height: 100%;
+    list-style: none;/*eliminamos puntos que acompañan a los items del menu*/
+}
+
+ul li a{
+    width: 100%;
+    height: 100%;
+    display: flex; /*para que permita posicionar los items del menu en el centro de barra*/
+    align-items: center;
+    padding: 14px;
+    color: #fff;
+    text-transform: uppercase; /*pasar el texto a mayusculas*/
+    transition: all 300ms ease;/*permite hacer la animacion cuando se pasa por encima de los items del menu*/
+}
+
+ul li a:hover{
+    transform: scale(1.1);
+    background-color: #065c99;
+}
+
+#selected{
+    transform: scale(1.1);
+    background-color: #065c99;
+
+}
+
+/*ELEMENTOS DEL MAIN*/
+
+main { 
+    *margin-top: 200px;
+}
+
+.introduccion{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+#titulo-ppal{
+    font-family: 'monoton';
+    color: #F85B1A;
+}
+
+p{
+    text-align: justify;
+}
+
+.img-introduccion{
+    width: 100%;
+}
+
+#img-intro{
+    width: 350px;
+    display: block; 
+    margin: auto; 
+}
+
+/*ELEMENTOS RESPONSIVOS*/
+.icon-menu{
+    font-size: 26px; /*tamaño del icono de hamburgesa*/
+    color: white;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+
+}
+
+#label-check{
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+#check-menu{
+    display: none;
+}
+
+/*ELEMENTOS FOOTER*/
+
+footer{
+    width: 100%;
+    border-top: 5px solid #F85B1A;
+    background-color: #072083;
+
+}
+
+.container-footer{
+    display: flex; /*elementos queden en columnas*/
+    flex-wrap: wrap; /*cuando se reduce el tamaño bajen a la siguiente fila*/
+    justify-content: space-between; /*se reparte el espacio entre las columnas del footer*/
+    max-width: 1200px;
+    margin: auto;
+   *margin-top: 20px;
+}
+
+.box-footer{
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+}
+
+.box-footer h3{
+    color: #fff;
+    font-weight: 500;
+}
+
+.box-footer a{
+    color: #fff;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.box-footer a:hover{
+    opacity: 0.8;
+}
+
+.box-footer a .fab{
+    font-size: 23px;
+}
+
+.box-footer a .fa-brands{
+    font-size: 23px;
+}
+
+.box-creador{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.box-creador p{
+    margin-top: 20px;
+    color: #cfcbcb;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*PAGINA CONTACTENOS*/
+
+.container-main{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center; /*centra los elementos horizonta/e dentro del contenedor*/
+    align-items: center; /*centra los elementos vertical/e dentro del contenedor*/
+}
+
+.titulo-contactenos{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.formulario{
+    background-color: #fff;
+    width: 40%;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    margin: auto;
+}
+
+.fieldset{
+    position: relative;
+    margin: 45px;
+}
+
+.form-input{
+    background: none;
+    color: #c6c6c6;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #8A9294;
+    resize: none;
+}
+
+.form-input:focus{
+    outline: none;
+    color: rgb(94, 93, 93);
+}
+
+.form-input:focus~.label, .form-input:valid~.label {    
+    position: absolute;
+    top: -14px;
+    font-size: 14px;
+    color: #065c99;
+}
+
+.label{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.4s ease all;
+    pointer-events: none;
+}
+
+.form-input:focus~.barra::before{
+    width: 100%;
+}
+
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before{
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #065c99;
+    transition: 0.4s ease all;
+    left: 0;
+}
+
+#bt-contactar{
+    background-color: #072083;
+    color: #fff;
+    display: block;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.warnings{
+    width: 250px;
+    text-align: center;
+    margin: auto;
+    color: #065c99;
+    padding-top: 20px;
+}
+
+
+/*ELEMENTOS PAGINA POLITICAS*/
+
+.container-politicas{
+    max-width: 1200px;
+    margin: 0 auto; /*para que se centre*/
+    padding: 0 40px;
+}
+
+#titulo-politica{
+    font-family: 'monoton';
+    color: #F85B1A;
+}
+
+.subtitulos{
+    color:#072083;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.parrafo-politicas{
+    text-align: justify;
+}
+
+
+/*ELEMENTOS PAGINA PRODUCTOS*/
+
+.container-datos{
+    width: 100%;
+    min-width: 300px;
+    margin-top: 2rem;
+}
+
+.container-productos{
+    width: 35%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    border: #065c99 4px solid;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.label-moneda {
+    font-size: 20px;
+    text-align: center;
+    padding-right: 3rem;
+    border-right: #065c99 3px solid;
+}
+
+.valores-moneda {
+    font-size: 20px;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+
+.flex-padre{
+    width: 100%;
+    background-color:#FFD7C1;
+    padding: 1rem 3rem;
+    display: flex; /*super importante para lo responsive*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: stretch;
+    gap: 3rem 1rem;
+
+}
+
+.card{
+    width: 350px;
+    border: 1px #c5ccce solid;
+    border-radius: 5px; 
+    background-color: #c5ccce;
+}
+
+.img-card{
+    width: 320px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.img{
+    width: 100%;
+}
+
+.info-card{
+    margin: 20px;
+}
+
+.color-h{
+    color:#F85B1A;
+}
+
+.name-card{
+    color: #065c99;
+    text-align: center;
+    margin: 5px;
+}
+
+
+
+/*CODIGO PARA VOLVER PAGINA RESPONSIVE*/
+
+@media (max-width: 720px){
+    #buscador{
+        display: none;   
+    }
+
+    .logo img{
+        padding-top: 10px;
+        width: 250px;
+    }   
+    
+    nav ul{
+        flex-direction: column; /*cambiar la direccion de los items del menu de forma vertical (columna)*/
+        background-color: #072083;
+        position: fixed; /*para traer al frente los items del menu*/
+        left: 0;
+        top: 158px;
+        width: 100%;
+        height: 0px;
+        transition: all 300ms ease;
+        z-index: 100; /*para que se ponga por encima de todo*/
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    a:hover{
+        transform: scale(1);
+    }
+
+    #selected{
+        transform: scale(1);
+    }
+
+    #label-check{
+        display: block; /*para se muestre cuando sea responsive*/
+    }
+
+    .icon-menu{
+        display: flex;
+    }
+
+    #check-menu:checked ~ nav ul{
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    main { 
+        *margin-top: 150px;
+    }
+
+
+    /*ELEMENTOS RESPONSIVOS EN LA PAGINA DE CONTACTENOS*/
+
+    .formulario{
+        width: 80%;
+    }
+
+
+    /*ELEMTOS RESPONSIVOS EN LA PAGINA DE PRODUCTOS*/
+
+    .container-productos{
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .container-productos{
+        width: 35%;        
+        flex-direction: column;   
+    }
+
+    .label-moneda {
+        flex-grow: 1;
+        border-right: none;
+        border-bottom: #065c99 3px solid;
+    }
+    .valores-moneda {
+        flex-grow: 1;
+    }
+
+
+
+    
+
+}
+
+
+
+
+
